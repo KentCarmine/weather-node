@@ -1,3 +1,5 @@
+'use strict';
+
 let getUser = (id, callback) => {
   let user = {
     id: id,
