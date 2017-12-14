@@ -2,11 +2,13 @@
 
 const request = require('request');
 
+const GEOCODE_URL = "https://maps.googleapis.com/maps/api/geocode/json?address=";
+
 let geocodeAddress = (address, callback) => {
   let uriEncodedAddress = encodeURIComponent(address);
 
   request({
-    url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + uriEncodedAddress,
+    url: GEOCODE_URL + uriEncodedAddress,
     json: true
   }, (error, response, body) => {
     if (error) {
